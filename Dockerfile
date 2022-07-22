@@ -8,7 +8,7 @@ WORKDIR /app/d-zone
 # Clone project files
 RUN apk add --no-cache git npm nginx rsync
 RUN mkdir -p /app/d-zone
-RUN git clone -b master https://github.com/d-zone-org/d-zone.git /app/d-zone
+RUN git clone -b master https://github.com/Peppershade/d-zone-test.git /app/d-zone
 
 # Install project
 RUN cd /app/d-zone
