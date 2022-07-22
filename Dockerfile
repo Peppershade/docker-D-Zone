@@ -4,15 +4,12 @@ LABEL maintainer="Griefed <griefed@griefed.de>"
 LABEL description="Dockerfile to build an image of D-Zone which is to be accessed with a reverse proxy like NGINX"
 
 # Install dependencies, download app, build app, remove unneeded stuff
-RUN echo "**** install dependencies and build tools and stuff ****"
 RUN apk add --no-cache git npm
 RUN mkdir -p /app/d-zone
-RUN git clone -b master https://github.com/Peppershade/d-zone-test.git /app/d-zone
-RUN echo "**** run npm install and build D-Zone ****"
+RUN git clone -b master https://github.com/d-zone-org/d-zone.git /app/d-zone
 RUN cd /app/d-zone
 RUN npm install --no-optional
 RUN npm run-script build
-RUN echo "**** delete git as we no longer need it ****"
 RUN apk del --purge git
 RUN rm -rf /root/.cache /tmp/*
 
