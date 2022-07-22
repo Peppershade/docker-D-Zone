@@ -5,14 +5,14 @@ LABEL description="Dockerfile to build an image of D-Zone which is to be accesse
 
 WORKDIR /app/d-zone
 
-# Copy files
-COPY root/ /
-
-# Install dependencies, download app, build app, remove unneeded stuff
+# Clone project files
 RUN apk add --no-cache git npm
 RUN mkdir -p /app/d-zone
 RUN git clone -b master https://github.com/d-zone-org/d-zone.git /app/d-zone
+
+# Install project
 RUN cd /app/d-zone
+COPY root/ /
 RUN npm install --no-optional
 RUN npm run-script build
 RUN apk del --purge git
