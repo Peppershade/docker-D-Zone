@@ -18,7 +18,7 @@ RUN npm run-script build
 RUN apk del --purge git
 RUN rm -rf /root/.cache /tmp/*
 RUN rm /app/d-zone/socket-config.json
-RUN rsync -r --delete --exclude 'web/script/' /app/d-zone/web/ /var/www/html/
+RUN rm /etc/nginx/http.d/default.conf
 
 # Communicate ports and volumes to be used
 EXPOSE 3000
