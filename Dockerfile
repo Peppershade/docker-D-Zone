@@ -6,7 +6,7 @@ LABEL description="Dockerfile to build an image of D-Zone which is to be accesse
 WORKDIR /app/d-zone
 
 # Clone project files
-RUN apk add --no-cache git npm nginx
+RUN apk add --no-cache git npm nginx rsync
 RUN mkdir -p /app/d-zone
 RUN git clone -b master https://github.com/d-zone-org/d-zone.git /app/d-zone
 
