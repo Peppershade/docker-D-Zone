@@ -2,5 +2,7 @@
 
 cd /app/d-zone || exit
 
+nginx
+
 exec \
 	s6-setuidgid abc /usr/bin/npm start
