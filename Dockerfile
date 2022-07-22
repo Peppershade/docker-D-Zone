@@ -10,13 +10,11 @@ RUN apk add --no-cache git npm
 RUN mkdir -p /app/d-zone
 RUN git clone -b master https://github.com/d-zone-org/d-zone.git /app/d-zone
 RUN cd /app/d-zone
+COPY root/ /
 RUN npm install --no-optional
 RUN npm run-script build
 RUN apk del --purge git
 RUN rm -rf /root/.cache /tmp/*
-
-# Copy local files
-COPY root/ /
 
 # Communicate ports and volumes to be used
 EXPOSE 3000
