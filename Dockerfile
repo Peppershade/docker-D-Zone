@@ -2,7 +2,7 @@ FROM lsiobase/alpine:3.16
 
 LABEL maintainer="Peppershade <admin@peppershade.nl>"
 LABEL description="Dockerfile to build an image of D-Zone which is to be accessed with a reverse proxy like NGINX"
-LABEL build="0.2.3"
+LABEL build="0.2.4"
 
 WORKDIR /app/d-zone
 
