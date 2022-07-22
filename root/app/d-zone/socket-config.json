@@ -1,5 +1,5 @@
 {
-    "address": "127.0.0.1",
+    "address": "192.168.69.4",
     "port": "3000",
     "secure": false
   }
