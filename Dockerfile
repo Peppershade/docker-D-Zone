@@ -22,6 +22,6 @@ RUN rm /etc/nginx/http.d/default.conf
 
 # Communicate ports and volumes to be used
 EXPOSE 3000
-EXPOSE 80
+EXPOSE 81
 
 VOLUME /config
