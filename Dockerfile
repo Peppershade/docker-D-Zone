@@ -3,6 +3,8 @@ FROM lsiobase/alpine:3.16
 LABEL maintainer="Griefed <griefed@griefed.de>"
 LABEL description="Dockerfile to build an image of D-Zone which is to be accessed with a reverse proxy like NGINX"
 
+WORKDIR /app/d-zone
+
 # Install dependencies, download app, build app, remove unneeded stuff
 RUN apk add --no-cache git npm
 RUN mkdir -p /app/d-zone
